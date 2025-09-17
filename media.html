@@ -1,0 +1,108 @@
+<style>
+    main {
+        padding: 20px;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    h2 {
+        text-align: center;
+        color: #c71585;
+        margin-bottom: 15px;
+    }
+
+    figure {
+        text-align: center;
+        background: #ffe6f0;
+        border: 1px solid #ffcce0;
+        padding: 10px;
+        border-radius: 8px;
+        margin: 15px auto;
+        max-width: 650px;
+    }
+
+    figcaption {
+        font-size: 14px;
+        margin-top: 8px;
+        color: #555;
+    }
+
+    img {
+        width: 100%;
+        max-width: 600px;
+        border-radius: 5px;
+    }
+
+    video,
+    audio {
+        width: 100%;
+        max-width: 600px;
+        border-radius: 5px;
+    }
+
+    a {
+        color: #c71585;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    section a[href="#top"] {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 8px 16px;
+        background-color: #ffcce0;
+        color: #333;
+        border-radius: 5px;
+    }
+
+    section a[href="#top"]:hover {
+        background-color: #ffb3d9;
+    }
+</style>
+<main>
+    <section id="media">
+        <h2 id="media-title">Відео та аудіо</h2>
+        <figure>
+            <video controls width="600" preload="metadata">
+                <source src="робимо_з_душею.mp4" type="video/mp4" />
+                Ваш браузер не підтримує відео. Завантажте файл
+            </video>
+            <figcaption>Поспостерігайте за нами зі сторони</figcaption>
+        </figure>
+        <figure>
+            <audio controls preload="none">
+                <source src="музика.mp3" type="audio/mpeg" />
+                Ваш браузер не підтримує аудіо. Завантажте трек
+                <a href="музика.mp3">Фонова музика нашого магазину</a>.
+            </audio>
+            <figcaption>Легка фонова музика для атмосфери</figcaption>
+        </figure>
+        <p> Хочете побачити фінальний букет одразу?
+            <a href="робимо_з_душею.mp4#t=09">Перейти на 00:09 відео</a>.
+        </p>
+    </section>
+
+    <section id="menu">
+        <h2 id="menu-title">Меню нашого магазину</h2>
+        <div class="3type">
+            <figure>
+                <img src="images/1.jpg" alt="Пастельно-рожевий букет із сухоцвітів" width="600" />
+                <figcaption>Букети сухоцвітів — 1 399 грн</figcaption>
+            </figure>
+
+            <figure>
+                <img src="images/images2.jpg" alt="Букет зі 101 червоної троянди" width="600" />
+                <figcaption>Букет «101 троянда» — 3 500 грн</figcaption>
+            </figure>
+
+            <figure>
+                <img src="images/images3.jpg" alt="Букет гіпсофіли білого кольору" width="600" />
+                <figcaption>Букети гіпсофіл — 2 399 грн</figcaption>
+            </figure>
+        </div>
+        <a href="#top">Повернутися нагору</a>
+    </section>
