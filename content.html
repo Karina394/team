@@ -1,0 +1,68 @@
+<hr>
+<section id="content">
+    <article>
+        <h2>Чому варто купувати у нас?</h2>
+        <p>
+            Флорист — це <mark>диригент прекрасного</mark>, під помахом руки якого створюються чудові композиції.<br>
+            Ми підготували <mark>вигідні умови</mark>, щоб купити матеріали для флористики й декору оптом. Головна мета,
+            з якою створювався флористичний інтернет-магазин <strong>LOLITA</strong>, — допомогти вам придбати
+            в одному місці все необхідне для створення квіткових композицій і декоративних рішень в інтер’єрі.
+        </p>
+    </article>
+    <article>
+        <h3>Також:</h3>
+        <p>
+            Ми націлені на довгострокове співробітництво, пропонуючи такі переваги:
+            <ul>
+                <li>великий асортимент — усе для флористики ви знайдете в нашому каталозі;</li>
+                <li>доступні ціни та знижки — купуючи оптом матеріали для роботи, ви заощаджуєте;</li>
+                <li>швидка доставка — наш інтернет-магазин відправить вашу покупку в будь-яке місто;</li>
+            </ul>
+        </p>
+    </article>
+    <aside>
+        <p>Букет цього тижня:<br>
+            <a href="#101roses">Букет "101 троянда"</a>
+            -20%!<br>
+            Акція діє до <time datetime="2025-09-22">22 вересня 2025</time>
+        </p>
+    </aside>
+</section>
+<canvas id="myCanvas" width="500" height="200"></canvas>
+<script>
+    class Ball {
+        constructor(x, y, r, color, speed) {
+            this.x = x;
+            this.y = y;
+            this.r = r;
+            this.color = color;
+            this.speed = speed;
+        }
+
+        draw(context) {
+            context.beginPath();
+            context.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+            context.fillStyle = this.color;
+            context.fill();
+            context.closePath();
+        }
+
+        move(canvas) {
+            this.x += this.speed;
+            if (this.x + this.r > canvas.width || this.x - this.r < 0) {
+                this.speed = -this.speed;
+            }
+        }
+    }
+    let canvas = document.getElementById("myCanvas");
+    let context = canvas.getContext("2d");
+    let ball = new Ball(50, 100, 20, "pink", 3);
+    function animate() {
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        ball.draw(context);
+        ball.move(canvas);
+        requestAnimationFrame(animate);
+    }
+    animate();
+</script>
+<hr>
