@@ -109,3 +109,39 @@
   section a[href="#top"]:hover {
     background-color: #ffb3d9;
   }
+
+  article {
+    margin-bottom: 20px;
+  }
+
+  ul {
+    padding-left: 20px;
+  }
+
+  aside {
+    background-color: #ffe6f0;
+    border: 1px solid #ffcce0;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+    max-width: 400px;
+  }
+
+  aside a {
+    color: #c71585;
+    font-weight: bold;
+  }
+
+  #myCanvas {
+    display: block;
+    margin: 20px auto;
+    background-color: rgba(255, 182, 218, 0.2);
+    border: 2px solid #ffcce0;
+    border-radius: 10px;
+  }
+
+  mark {
+    background-color: #ffb3d9;
+    color: #c71585;
+    font-weight: bold;
+  }
