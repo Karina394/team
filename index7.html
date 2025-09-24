@@ -1,42 +1,97 @@
- <section id="media">
-        <h2 id="media-title">Відео та аудіо</h2>
-        <figure>
-            <video controls width="600" preload="metadata">
-                <source src="робимо_з_душею.mp4" type="video/mp4" />
-                Ваш браузер не підтримує відео. Завантажте файл
-            </video>
-            <figcaption>Поспостерігайте за нами зі сторони</figcaption>
-        </figure>
-        <figure>
-            <audio controls preload="none">
-                <source src="музика.mp3" type="audio/mpeg" />
-                Ваш браузер не підтримує аудіо. Завантажте трек
-                <a href="музика.mp3">Фонова музика нашого магазину</a>.
-            </audio>
-            <figcaption>Легка фонова музика для атмосфери</figcaption>
-        </figure>
-        <p> Хочете побачити фінальний букет одразу?
-            <a href="робимо_з_душею.mp4#t=09">Перейти на 00:09 відео</a>.
-        </p>
-    </section>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Інтернет-магазин</title> 
+        <link rel="stylesheet" href="mystyle.css">
+    </head>
+    <body>
+        <div id="top"></div>
+        <header>
+            <h1>LOLITA</h1>
+            <nav>
+              <ul>
+                <li><a href="#about">Головна</a></li>
+                <li><a href="#content">Контент</a></li>
+                <li><a href="#media">Відео & Аудіо</a></li>
+                <li><a href="#menu">Меню магазину</a></li>
+              </ul>
+            </nav>
+        </header>
+        <main>
+	    	<hr>
+	        <section id="content">
+    		    <article>
+        			<h2>Чому варто купувати у нас?</h2>
+        			<p>
+            		    Флорист — це <mark>диригент прекрасного</mark>, під помахом руки якого створюються чудові композиції.<br>
+            		    Ми підготували <mark>вигідні умови</mark>, щоб купити матеріали для флористики й декору оптом. Головна мета,
+    			    	з якою створювався флористичний інтернет-магазин <strong>LOLITA</strong>, — допомогти вам придбати
+            		    в одному місці все необхідне для створення квіткових композицій і декоративних рішень в інтер’єрі.
+        			</p>
+    		    </article>
+    		    <article>
+        			<h3>Також:</h3>
+        			<p>
+            		    Ми націлені на довгострокове співробітництво, пропонуючи такі переваги:
+            		    <ul>
+                	        <li>великий асортимент — усе для флористики ви знайдете в нашому каталозі;</li>
+                	        <li>доступні ціни та знижки — купуючи оптом матеріали для роботи, ви заощаджуєте;</li>
+                	        <li>швидка доставка — наш інтернет-магазин відправить вашу покупку в будь-яке місто;</li>
+            		    </ul>
+        			</p>
+    		    </article>
+    		    <aside>
+        	        <p>Букет цього тижня:<br>
+            		    <a href="#101roses">Букет "101 троянда"</a>
+            		    -20%!<br>
+            		    Акція діє до <time datetime="2025-09-22">22 вересня 2025</time>
+        			</p>
+				</aside>
+		</section>
+		<canvas id="myCanvas" width="500" height="200"></canvas>
+		<script>
+    		class Ball {
+        		constructor(x, y, r, color, speed) {
+            		this.x = x;
+            		this.y = y;
+            		this.r = r;
+            		this.color = color;
+            		this.speed = speed;
+        		}
 
-    <section id="menu">
-        <h2 id="menu-title">Меню нашого магазину</h2>
-        <div class="3type">
-            <figure>
-                <img src="images/1.jpg" alt="Пастельно-рожевий букет із сухоцвітів" width="600" />
-                <figcaption>Букети сухоцвітів — 1 399 грн</figcaption>
-            </figure>
+        		draw(context) {
+            		context.beginPath();
+            		context.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+            		context.fillStyle = this.color;
+            		context.fill();
+            		context.closePath();
+        		}
 
-            <figure>
-                <img src="images/images2.jpg" alt="Букет зі 101 червоної троянди" width="600" />
-                <figcaption>Букет «101 троянда» — 3 500 грн</figcaption>
-            </figure>
-
-            <figure>
-                <img src="images/images3.jpg" alt="Букет гіпсофіли білого кольору" width="600" />
-                <figcaption>Букети гіпсофіл — 2 399 грн</figcaption>
-            </figure>
-        </div>
-        <a href="#top">Повернутися нагору</a>
-    </section>
+        		move(canvas) {
+            		this.x += this.speed;
+            		if (this.x + this.r > canvas.width || this.x - this.r < 0) {
+                	    this.speed = -this.speed;
+            		}
+        		}
+    		}
+    		let canvas = document.getElementById("myCanvas");
+    		let context = canvas.getContext("2d");
+    		let ball = new Ball(50, 100, 20, "pink", 3);
+    		function animate() {
+        	    context.clearRect(0, 0, canvas.width, canvas.height);
+        		ball.draw(context);
+        		ball.move(canvas);
+        		requestAnimationFrame(animate);
+    		}
+    	    animate();
+		</script>
+		<hr>
+        </main>
+        <footer>
+            <p>&copy; 2024 LOLITA</p>
+            <a href="#top">Вгору</a>
+        </footer>
+    </body>
+</html>
